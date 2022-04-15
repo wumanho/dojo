@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #10172A;
+    display: grid;
+    place-content: center;
+    min-height: 90vh;
+    color: #f7f7f7;
+}
+
+.menu {
+    display: flex;
+    position: relative;
+}
+
+.menu-item {
+    display: inline-block;
+    text-align: center;
+    padding: 16px 12px;
+    color: #f1f1f1;
+    text-decoration: none; /*下划线 none*/
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    user-select: none;
+    transition: color .2s ease;
+}
+
+.menu-item.active {
+    color: #ffffff;
+}
+
+.highlight {
+    background: #475668;
+    position: absolute; /*需要通过 js 来移动*/
+    top: 10px;
+    left: 0;
+    border-radius: 4px;
+    height: 38px;
+    /*width: 80px; !*宽度是动态设置的*!*/
+    opacity: 0;
+    z-index: -1;
+    /*transition: .15s ease;*/
+    transition-property: width, transform, opacity; /*定义几个过度属性*/
+}
+
+.menu:hover .highlight{
+    opacity: 1;
+}
