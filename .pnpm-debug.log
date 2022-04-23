@@ -1,0 +1,54 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "dojo",
+      "version": "1.0.0",
+      "description": "FE practice",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wumanho/dojo.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/wumanho/dojo/issues"
+      },
+      "homepage": "https://github.com/wumanho/dojo#readme"
+    },
+    "prefix": "D:\\codeSpace\\dojo"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "D:\\.pnpm-store\\v3",
+    "virtualStoreDir": "D:\\codeSpace\\dojo\\node_modules\\.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "D:\\codeSpace\\dojo",
+    "stage": "resolution_started"
+  },
+  "4 error pnpm": {
+    "shortMessage": "Command failed with exit code 128: C:\\Program Files\\Git\\mingw64\\bin\\git.EXE ls-remote git+ssh://git@github.com/type-challenges/utils.git HEAD",
+    "command": "C:\\Program Files\\Git\\mingw64\\bin\\git.EXE ls-remote git+ssh://git@github.com/type-challenges/utils.git HEAD",
+    "escapedCommand": "\"C:\\Program Files\\Git\\mingw64\\bin\\git.EXE\" ls-remote \"git+ssh://git@github.com/type-challenges/utils.git\" HEAD",
+    "exitCode": 128,
+    "stdout": "",
+    "stderr": "ERROR: Repository not found.\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.",
+    "failed": true,
+    "timedOut": false,
+    "isCanceled": false,
+    "killed": false,
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "Command failed with exit code 128: C:\\Program Files\\Git\\mingw64\\bin\\git.EXE ls-remote git+ssh://git@github.com/type-challenges/utils.git HEAD\nERROR: Repository not found.\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.",
+      "stack": "pnpm: Command failed with exit code 128: C:\\Program Files\\Git\\mingw64\\bin\\git.EXE ls-remote git+ssh://git@github.com/type-challenges/utils.git HEAD\nERROR: Repository not found.\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.\n    at makeError (C:\\Users\\wuman\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:42502:17)\n    at handlePromise (C:\\Users\\wuman\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:43073:33)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async getRepoRefs (C:\\Users\\wuman\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:85029:23)\n    at async resolveRef (C:\\Users\\wuman\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:85041:20)\n    at async resolveGit (C:\\Users\\wuman\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:84992:24)\n    at async Object.resolve (C:\\Users\\wuman\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:86117:241)\n    at async run (C:\\Users\\wuman\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:74193:23)"
+    }
+  }
+}
