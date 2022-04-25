@@ -25,3 +25,13 @@ function myPick(todo, keys) {
     })
     return obj
 }
+
+interface square {
+    color: string
+}
+
+function test(s: square) {
+    console.log(s.color)
+}
+
+test({color:'black'})
