@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #404456;
+    color: whitesmoke;
+}
+
+.loader {
+    position: absolute;
+    width: 10em;
+    height: 10em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hill {
+    position: absolute;
+    width: 14em;
+    height: 5em;
+    left: 0;
+    top: 100%;
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    border-top: .5em solid whitesmoke;
+}
+
+.stone {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    border-radius: 15%;
+    background-color: transparent;
+    border: .5em solid whitesmoke;
+    left: 0;
+    bottom: -.6em;
+    transform: translateY(-2em) rotate(-45deg);
+    animation: push 2.5s cubic-bezier(.79, 0, .47, .97) infinite;
+}
+
+@keyframes push {
+    0% {
+        transform: translateY(-2em) rotate(-45deg);
+    }
+
+    5% {
+        transform: translateY(-2em) rotate(-50deg);
+    }
+
+    /*每次步进20%*/
+    20% {
+        transform: translate(2em, -4em) rotate(45deg);
+    }
+
+    25% {
+        transform: translate(2em, -4em) rotate(40deg);
+    }
+
+    50% {
+        transform: translate(4em, -6em) rotate(135deg);
+    }
+
+    55%{
+        transform: translate(4em, -6em) rotate(130deg);
+    }
+
+    75% {
+        transform: translate(6em, -8em) rotate(225deg);
+    }
+
+    100% {
+        transform: translate(0, -2em) rotate(-225deg);
+    }
+}
