@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button onclick="handleBtn1()">填充矩形</button>
+    <button onclick="handleBtn2()">绘制矩形</button>
+    <button onclick="handleClear()">擦除画布内容</button>
+</div>
+<canvas id="canvas" width="600" height="600">
+    当前的浏览器版本过低，请升级浏览器版本
+</canvas>
+<script>
+  const canvas = document.getElementById('canvas')
+  const ctx = canvas.getContext('2d')
+
+  const handleBtn1 = () => {
+    ctx.fillStyle = 'green'
+    ctx.fillRect(100, 100, 100, 100)
+  }
+  const handleBtn2 = () => {
+    ctx.strokeStyle = 'red'
+    ctx.strokeRect(300, 100, 100, 100)
+  }
+  const handleClear = () => {
+    ctx.clearRect(0, 0, 600, 600)
+  }
+
+</script>
+</body>
+</html>

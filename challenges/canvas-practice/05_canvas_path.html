@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600">
+    当前的浏览器版本过低，请升级浏览器版本
+</canvas>
+<script>
+  const canvas = document.getElementById('canvas')
+  const ctx = canvas.getContext('2d')
+  // 创建一个路径
+  ctx.beginPath()
+  // 移动绘制点
+  ctx.moveTo(100, 100)
+  // 描述行进路径
+  ctx.lineTo(200, 200)
+  ctx.lineTo(400, 180)
+  ctx.lineTo(380, 50)
+  // 封闭路径
+  ctx.closePath()
+  // 绘制不规则图形
+  ctx.strokeStyle = 'red'
+  ctx.stroke()
+</script>
+</body>
+</html>
