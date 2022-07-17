@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600">
+    当前的浏览器版本过低，请升级浏览器版本
+</canvas>
+<script>
+  const canvas = document.getElementById('canvas')
+  const ctx = canvas.getContext('2d')
+  // 设置颜色
+  ctx.fillStyle = 'blue'
+  // 基础偏移量
+  let left = 100
+  // 动画
+  setInterval(() => {
+    // 每次清空画布
+    ctx.clearRect(0, 0, 600, 600)
+    // 向右移 1px
+    left++
+    // 绘制矩形
+    ctx.fillRect(left, 100, 100, 100)
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600">
+    当前的浏览器版本过低，请升级浏览器版本
+</canvas>
+<script>
+  class Rect {
+    constructor(ctx, x, y, w, h, color) {
+      this.ctx = ctx
+      this.x = x
+      this.y = y
+      this.w = w
+      this.h = h
+      this.color = color
+    }
+
+    update = () => {
+      this.x++
+    }
+    render = () => {
+      this.ctx.fillStyle = this.color
+      this.ctx.fillRect(this.x, this.y, this.w, this.h)
+    }
+  }
+
+  const canvas = document.getElementById('canvas')
+  const ctx = canvas.getContext('2d')
+  const rect = new Rect(ctx, 100, 100, 200, 100, 'blue')
+  const rect2 = new Rect(ctx, 100, 200, 200, 100, 'purple')
+  const startAnimation = () => {
+    setInterval(() => {
+      ctx.clearRect(0, 0, 600, 600)
+      rect.update()
+      rect.render()
+      rect2.update()
+      rect2.render()
+    })
+  }
+  startAnimation()
+
+</script>
+</body>
+</html>

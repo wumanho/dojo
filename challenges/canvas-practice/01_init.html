@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #canvas{
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500">
+        当前的浏览器版本过低，请升级浏览器版本
+    </canvas>
+    <script>
+        const canvas = document.getElementById('canvas')
+        // canvas 的上下文分为 2d 和 3d
+        const ctx = canvas.getContext('2d')
+        // 绘制矩形
+        ctx.fillStyle = 'green'
+        // x 轴坐标，y 轴坐标,宽度,高度
+        ctx.fillRect(100,100,200,50)
+    </script>
+</body>
+</html>
