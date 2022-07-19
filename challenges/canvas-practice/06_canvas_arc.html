@@ -18,6 +18,13 @@
   const ctx = canvas.getContext('2d')
   // 创建一个路径
   ctx.beginPath()
+  // 200 200 起始半径
+  // 100 圆心半径
+  // 0,Math.PI * 2 弧度
+  // true 逆时针 | false 顺时针
+  ctx.arc(200, 200, 75, 0, 1, false)
+  // 绘制
+  ctx.stroke()
 </script>
 </body>
 </html>
