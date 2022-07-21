@@ -1,4 +1,4 @@
-//** call **//
+/** call **/
 
 function icall(thisArg, ...rest) {
   // step 1 兼容非对象参数和空值
@@ -27,7 +27,7 @@ function sum(num1, num2) {
 //   name: 'hi'
 // })
 
-//** apply **//
+/** apply **/
 function iapply(thisArg, argArray = []) {
   // 判空
   thisArg = thisArg ? Object(thisArg) : window
@@ -50,7 +50,7 @@ function applySum(num1, num2) {
 //   name: 'apply'
 // }))
 
-//** bind **//
+/** bind **/
 function ibind(thisArg, ...argArray) {
   // 判空
   thisArg = thisArg ? Object(thisArg) : window
@@ -75,5 +75,38 @@ function bindSum(num1, num2, num3, num4) {
 
 const newFn = bindSum.ibind({name: 'bb'}, 20, 30, 40, 50)
 
-console.log(newFn())
+/** pure function **/
+
+let bird = 'bird'
+// 1. 相同的输入必定输出相同的输出
+// 2. 没有产生副作用
+function pureSample(num1, num2) {
+  return num1 * 2 + num2
+}
+
+// 1. 产生副作用
+function inPureSample() {
+  bird = 'dog'
+  console.log(bird)
+}
+
+// 1. 相同的输入必定输出相同的输出
+// 2. 没有对传入的参数做直接修改，所以不会产生副作用
+const pureObj = {
+  name: 'hi',
+  age: 18
+}
+
+function pureSample1(info) {
+  return {
+    ...info,
+    age: 88
+  }
+}
+
+console.log(pureSample1(pureObj))
+
+
+
+
 
