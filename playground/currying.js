@@ -46,3 +46,12 @@ console.log(curryAdd(10,20,30))
 console.log(curryAdd(10,20)(30))
 console.log(curryAdd(10)(20)(30))
 
+
+// var name1 = 'haha'
+//
+// function testscope() {
+//   var name1 = 'bb'
+//   console.log(name1)
+// }
+//
+// testscope()
