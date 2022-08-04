@@ -49,6 +49,8 @@ const p = new Proxy(obj1, {
   }
 })
 
-console.log(p.name)
+// console.log(p.name)
+
+
 
 
