@@ -11,6 +11,7 @@ type OnFulfilled = (value?: any) => any
 type OnRejected = (reason?: any) => any
 type OnFinally = (value?: any) => any
 type OnState = OnFulfilled | OnRejected
+type Promises = iPromise[]
 
 class iPromise<T = any, E = any> {
   private value: T
@@ -22,6 +23,32 @@ class iPromise<T = any, E = any> {
 
   constructor(executor: Executor, public status: number = PROMISE_STATUS.PENDING) {
     promiseConstructor.call(this, executor)
+  }
+
+  static resolve = (value) => {
+    return new iPromise((resolve: Resolve) => {
+      resolve(value)
+    })
+  }
+
+  static reject = (reason) => {
+    return new iPromise((resolve: Resolve, reject: Reject) => {
+      reject(reason)
+    })
+  }
+
+  static all = (promises: Promises) => {
+    return new iPromise((resolve, reject) => {
+      const value = []
+      promises.forEach(p => {
+        p.then(res => {
+          value.push(res)
+          if (value.length === promises.length) resolve(value)
+        }, e => {
+          reject(e)
+        })
+      })
+    })
   }
 
   //用 then 保存存入的回调函数
@@ -38,7 +65,7 @@ class iPromise<T = any, E = any> {
     }
     onFulfilled = onFulfilled || defaultOnFinally
 
-    return new iPromise((resolve, reject) => {
+    return new iPromise((resolve: Resolve, reject: Reject) => {
       switch (this.status) {
         case PROMISE_STATUS.FULFILLED:
           handleThenProgress(onFulfilled, this.value, resolve, reject)
@@ -118,21 +145,23 @@ function promiseConstructor(executor: Executor) {
 }
 
 const p1 = new iPromise((resolve, reject) => {
-  //resolve('heee')
-   reject('errrrr')
+  setTimeout(() => {
+    resolve('p1')
+  }, 1000)
+})
+const p2 = new iPromise((resolve, reject) => {
+  setTimeout(() => {
+    reject('p2')
+  }, 2000)
+})
+const p3 = new iPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('p3')
+  }, 3000)
 })
 
-p1.then((val) => {
-  console.log(val)
-  return 'then 1'
-}).then((val1) => {
-  console.log(val1)
-  return 'finaaa'
-}).catch((err)=>{
-  console.log(err)
-  return '123'
-}).finally((valfin) => {
-  console.log(valfin)
+iPromise.all([p1, p2, p3]).then(res => {
+  console.log(res, 'res')
 })
 
 export {}
