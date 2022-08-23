@@ -1,39 +1,39 @@
 /** 01 **/
-setTimeout(()=>{
+setTimeout(() => {
   console.log('setTimeout1')
 
-  new Promise((resolve)=>{
+  new Promise((resolve) => {
     resolve()
-  }).then(()=>{
-    new Promise((resolve)=>{
+  }).then(() => {
+    new Promise((resolve) => {
       resolve()
-    }).then(()=>{
+    }).then(() => {
       console.log('then4')
     })
     console.log('then2')
   })
 })
 
-new Promise((resolve)=>{
+new Promise((resolve) => {
   console.log('promise1')
   resolve()
-}).then(()=>{
+}).then(() => {
   console.log('then1')
 })
 
-setTimeout(()=>{
+setTimeout(() => {
   console.log('setTimeout2')
 })
 
 console.log(2)
 
-queueMicrotask(()=>{
+queueMicrotask(() => {
   console.log('queuetask')
 })
 
-new Promise((resolve)=>{
+new Promise((resolve) => {
   resolve()
-}).then(()=>{
+}).then(() => {
   console.log('then3')
 })
 
@@ -51,28 +51,28 @@ new Promise((resolve)=>{
 
 
 /** 02 **/
-async function async1(){
+async function async1() {
   console.log('async1 start')
   await async2()
   console.log('async1 end')
 }
 
-async function async2(){
+async function async2() {
   console.log('async2')
 }
 
 console.log('script start')
 
-setTimeout(()=>{
+setTimeout(() => {
   console.log('setTimeout')
-},0)
+}, 0)
 
 async1()
 
-new Promise((resolve)=>{
+new Promise((resolve) => {
   console.log('promise1')
   resolve()
-}).then(()=>{
+}).then(() => {
   console.log('promise2');
 })
 

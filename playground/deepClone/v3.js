@@ -19,7 +19,7 @@ function isNotAnObject(val) {
 }
 
 function isAFunction(fun) {
-  return typeof fun !== 'function'
+  return typeof fun === 'function'
 }
 
 module.exports = {deepClone}
