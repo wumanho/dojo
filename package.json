@@ -4,7 +4,7 @@
   "description": "FE practice",
   "main": "index.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest --run"
   },
   "repository": {
     "type": "git",
