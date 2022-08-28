@@ -6,6 +6,7 @@ specifiers:
   '@babel/generator': ^7.18.13
   '@babel/parser': ^7.18.13
   '@babel/preset-env': ^7.18.10
+  '@babel/template': ^7.18.10
   '@babel/traverse': ^7.18.13
   '@babel/types': ^7.18.13
   ts-node: ^10.9.1
@@ -18,6 +19,7 @@ devDependencies:
   '@babel/generator': 7.18.13
   '@babel/parser': 7.18.13
   '@babel/preset-env': 7.18.10_@babel+core@7.18.13
+  '@babel/template': 7.18.10
   '@babel/traverse': 7.18.13
   '@babel/types': 7.18.13
   ts-node: 10.9.1_typescript@4.7.4
