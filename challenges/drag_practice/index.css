@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  min-height: 100vh;
+  width: 100%;
+  background-color: lightblue;
+}
+
+.container {
+  height: 10em;
+  width: 10em;
+  margin: 40px;
+  background-color: #ffffff;
+  border: 0.5em solid black;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  background-color: #a9d166;
+}
+
+.hold {
+  border: 0.5em solid #7f8c8d;
+}
+.hide {
+  display: none;
+}
+.hovered{
+    border-style: dashed;
+    border-color: #f3b92b;
+}
